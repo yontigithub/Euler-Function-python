@@ -17,7 +17,13 @@ def prime_factors(n):
 
 
 def phi(n):
-    return 4
+    p = prime_factors(n)
+    res = 1
+    for [i, j] in p:
+        res *= (i**j) - j  # phi(a * b) = phi(a) * phi(b)
+
+    return res
 
 
-print(prime_factors(1024))
+print(prime_factors(5*2*3*7))
+print(phi(5*2*3*7))
